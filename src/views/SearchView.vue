@@ -132,7 +132,11 @@ export default {
       console.log(this.listNews);
       let resSearch = this.listNews.filter((news) => {
         if (news && news.title) {
-          if (news.title.toLowerCase().indexOf(this.searchField) !== -1) {
+          if (
+            news.title.toLowerCase().indexOf(this.searchField) !== -1 ||
+            news.title.indexOf(this.searchField) !== -1 ||
+            news.title.toUpperCase().indexOf(this.searchField) !== -1
+          ) {
             return news;
           }
         }
